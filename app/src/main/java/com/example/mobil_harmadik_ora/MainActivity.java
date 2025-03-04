@@ -54,6 +54,12 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        for (Sensor sensor: sensors)
+        {
+            Log.d("SensorList", sensor.toString());
+            sensorsTextView.append(sensor.toString() + "\n\n");
+        }
+
     }
 
     @Override
