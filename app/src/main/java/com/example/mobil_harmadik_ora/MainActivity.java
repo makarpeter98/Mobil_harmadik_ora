@@ -12,6 +12,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     SensorManager sensorManager;
     TextView sensorsTextView;
@@ -32,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
 
         sensorsTextView = findViewById(R.id.sensorsTextView);
         lightSensorTextView = findViewById(R.id.lightSensorTextView);
+
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        List<Sensor> sensors = sensorManager.getSensorList(Sensor.TYPE_ALL);
+        lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
 
     }
 
